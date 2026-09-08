@@ -1,0 +1,39 @@
+{
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "Title": "Umbraco Catalyst",
+  "Description": "Adds configurable Star Rating and CDN Image property editors, plus a searchable emoji toolbar extension for the Umbraco TipTap Rich Text Editor.",
+  "AuthorDetails": {
+    "Name": "Phases.io",
+    "Description": "Phases - We create digital efficiency - Web, Podio, Integrations",
+    "Url": "https://www.phases.io/",
+    "ImageUrl": "https://github.com/phases.png",
+    "SyncContributorsFromRepository": false,
+    "Contributors": [
+      {
+        "Name": "Vishnu Shanmughan",
+        "Url": "https://github.com/vishnushanmughan"
+      }
+    ]
+  },
+  "Category": "Editor Tools",
+  "DocumentationUrl": "https://github.com/vishnushanmughan/umbraco.catalyst/blob/main/README.md",
+  "LicenseTypes": [ "Free" ],
+  "IssueTrackerUrl": "https://github.com/vishnushanmughan/umbraco.catalyst/issues",
+  "PackageType": "Package",
+  "LookingForContributors": true,
+  "LookingForMaintainer": false,
+  "VersionDependencyMode": "Default",
+  "Tags": [
+    "umbraco",
+    "backoffice",
+    "property editor",
+    "data type",
+    "star rating",
+    "cdn image",
+    "image",
+    "tiptap",
+    "rich text editor",
+    "emoji",
+    "emoji picker"
+  ]
+}

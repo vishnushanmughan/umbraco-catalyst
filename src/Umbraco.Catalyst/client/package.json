@@ -1,0 +1,20 @@
+{
+  "name": "umbraco-catalyst-client",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "prebuild": "node scripts/slim-emoji-data.mjs",
+    "build": "tsc && vite build",
+    "dev": "vite build --watch"
+  },
+  "dependencies": {
+    "lit": "^3.3.2",
+    "@emoji-mart/data": "^1.2.1"
+  },
+  "devDependencies": {
+    "@umbraco-cms/backoffice": "^17.0.0",
+    "typescript": "~5.9.3",
+    "vite": "^5.4.0"
+  }
+}

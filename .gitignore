@@ -1,0 +1,13 @@
+﻿.vs/
+bin/
+obj/
+nupkgs/
+
+# NuGet package artifacts
+*.nupkg
+*.snupkg
+
+# Local development/specification documents
+CATALYST_FIX_EDITOR_REGISTRATION.md
+COPILOT_SPEC.md
+COPILOT_SPEC_API.md

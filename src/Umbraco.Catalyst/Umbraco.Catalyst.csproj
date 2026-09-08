@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>Umbraco.Catalyst</RootNamespace>
+    <AssemblyName>Umbraco.Catalyst</AssemblyName>
+
+    <!-- Razor Class Library static web assets are served automatically by the
+         consuming Umbraco site's own UseStaticFiles/MapStaticAssets pipeline.
+         No config, no manual App_Plugins copy, no Program.cs change required. -->
+    <StaticWebAssetBasePath>App_Plugins</StaticWebAssetBasePath>
+    <AddRazorSupportForMvc>false</AddRazorSupportForMvc>
+
+    <!-- NuGet Package Metadata -->
+    <PackageId>Umbraco.Catalyst</PackageId>
+    <Version>1.0.11</Version>
+    <Title>Umbraco Catalyst</Title>
+    <Authors>Vishnu Shanmughan, Phases.io</Authors>
+    <Company>Phases.io</Company>
+    <Product>Umbraco Catalyst</Product>
+    <Description>Umbraco Catalyst provides configurable Star Rating and CDN Image property editors, plus a searchable emoji toolbar extension for the Umbraco TipTap Rich Text Editor.</Description>
+    <PackageTags>umbraco;umbraco-cms;umbraco-backoffice;umbraco-17;umbraco-plugin;property-editor;data-type;star-rating;rating;cdn-image;image;alt-text;tiptap;rich-text-editor;emoji;emoji-picker;backoffice-extension</PackageTags>
+    <PackageProjectUrl>https://github.com/vishnushanmughan/umbraco.catalyst</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/vishnushanmughan/umbraco.catalyst</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <IncludeBuildOutput>true</IncludeBuildOutput>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <DebugType>embedded</DebugType>
+    <IncludeSymbols>false</IncludeSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Umbraco CMS Core - version range supports v17 and v18+ -->
+    <PackageReference Include="Umbraco.Cms.Core" Version="[17.0.0,19.0.0)" />
+    <PackageReference Include="Umbraco.Cms.Web.Common" Version="[17.0.0,19.0.0)" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="client\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" Condition="Exists('..\..\README.md')" />
+  </ItemGroup>
+
+  <!-- Ensures the backoffice bundle (wwwroot/UmbracoCatalyst) is built before packing -->
+  <Target Name="BuildClientBeforePack" BeforeTargets="GenerateNuspec;Pack">
+    <PropertyGroup>
+      <ClientDir>$(MSBuildThisFileDirectory)client</ClientDir>
+    </PropertyGroup>
+    <Message Importance="high" Text="Building client assets (npm run build) in $(ClientDir)..." />
+    <Exec Command="npm install" WorkingDirectory="$(ClientDir)" Condition="!Exists('$(ClientDir)\node_modules')" />
+    <Exec Command="npm run build" WorkingDirectory="$(ClientDir)" IgnoreExitCode="false" />
+  </Target>
+
+</Project>

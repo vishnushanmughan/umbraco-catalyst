@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Umbraco.Catalyst/Umbraco.Catalyst.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Umbraco.Catalyst.Tests/Umbraco.Catalyst.Tests.csproj" />
+  </Folder>
+</Solution>

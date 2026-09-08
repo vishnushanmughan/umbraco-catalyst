@@ -1,0 +1,109 @@
+{
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "Umbraco.Catalyst",
+  "version": "1.0.11",
+  "dataTypes": [
+    {
+      "name": "Umbraco.Catalyst.StarRating",
+      "alias": "Umbraco.Catalyst.StarRating",
+      "propertyEditorAlias": "Catalyst.StarRating",
+      "configuration": {}
+    },
+    {
+      "name": "Umbraco.Catalyst.CdnImage",
+      "alias": "Umbraco.Catalyst.CdnImage",
+      "propertyEditorAlias": "Catalyst.CdnImage",
+      "configuration": {}
+    }
+  ],
+  "extensions": [
+    {
+      "type": "propertyEditorUi",
+      "alias": "Catalyst.PropertyEditorUI.StarRating",
+      "name": "Catalyst Star Rating UI",
+      "js": "/App_Plugins/UmbracoCatalyst/dist/catalyst.js",
+      "elementName": "catalyst-star-rating-editor",
+      "meta": {
+        "label": "Catalyst Star Rating",
+        "propertyEditorSchemaAlias": "Catalyst.StarRating",
+        "icon": "icon-star",
+        "group": "Catalyst",
+        "supportsReadOnly": true,
+        "settings": {
+          "properties": [
+            {
+              "alias": "maxStars",
+              "label": "Maximum Stars",
+              "description": "How many stars to display (3-10).",
+              "propertyEditorUiAlias": "Umb.PropertyEditorUi.Integer"
+            },
+            {
+              "alias": "allowHalfStars",
+              "label": "Allow Half Stars",
+              "description": "Allow half-star increments such as 3.5.",
+              "propertyEditorUiAlias": "Umb.PropertyEditorUi.Toggle"
+            },
+            {
+              "alias": "allowZero",
+              "label": "Allow Zero (No Rating)",
+              "description": "Allow saving 0 to represent no rating.",
+              "propertyEditorUiAlias": "Umb.PropertyEditorUi.Toggle"
+            }
+          ],
+          "defaultData": [
+            { "alias": "maxStars", "value": 5 },
+            { "alias": "allowHalfStars", "value": true },
+            { "alias": "allowZero", "value": true }
+          ]
+        }
+      }
+    },
+    {
+      "type": "propertyEditorUi",
+      "alias": "Catalyst.PropertyEditorUI.CdnImage",
+      "name": "Catalyst CDN Image UI",
+      "js": "/App_Plugins/UmbracoCatalyst/dist/catalyst.js",
+      "elementName": "catalyst-cdn-image-editor",
+      "meta": {
+        "label": "Catalyst CDN Image",
+        "propertyEditorSchemaAlias": "Catalyst.CdnImage",
+        "icon": "icon-picture",
+        "group": "Catalyst",
+        "supportsReadOnly": true,
+        "settings": {
+          "properties": [
+            {
+              "alias": "allowedPrefixes",
+              "label": "Allowed URL Prefixes",
+              "description": "Comma-separated prefixes. Empty = allow any.",
+              "propertyEditorUiAlias": "Umb.PropertyEditorUi.TextBox"
+            },
+            {
+              "alias": "requireAltText",
+              "label": "Require Alt Text",
+              "description": "Editors must provide alt text before saving.",
+              "propertyEditorUiAlias": "Umb.PropertyEditorUi.Toggle"
+            },
+            {
+              "alias": "previewHeight",
+              "label": "Preview Height (px)",
+              "description": "Height of the image preview area.",
+              "propertyEditorUiAlias": "Umb.PropertyEditorUi.Integer"
+            }
+          ],
+          "defaultData": [
+            { "alias": "allowedPrefixes", "value": "" },
+            { "alias": "requireAltText", "value": true },
+            { "alias": "previewHeight", "value": 200 }
+          ]
+        }
+      }
+    },
+    {
+      "type": "bundle",
+      "alias": "Catalyst.Tiptap.Emoji",
+      "name": "Catalyst TipTap Emoji",
+      "js": "/App_Plugins/UmbracoCatalyst/dist/catalyst.js"
+    }
+  ]
+}
