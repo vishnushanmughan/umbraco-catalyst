@@ -1,104 +1,113 @@
 # Umbraco Catalyst
 
-Catalyst property editors and backoffice extensions for Umbraco CMS 17+, packaged as
-a single NuGet package: `Umbraco.Catalyst`.
+> Useful, out-of-the-box property editors and backoffice extensions for Umbraco CMS.
 
-Install the package and the Catalyst data types appear immediately in the backoffice under
-**Settings → Data Types → Create New**. No `appsettings.json` or `Program.cs` changes
-required.
+## Overview
 
-## Data Types
+Umbraco Catalyst is a backend-extending package for Umbraco. It currently contains a small set of useful property editors and extensions designed to work out of the box. Catalyst will grow over time with more easy-to-use datatypes and backend features.
 
-| Alias                 | Name        |
-| --------------------- | ----------- |
-| `Catalyst.StarRating` | Star Rating |
-| `Catalyst.CdnImage`   | CDN Image   |
+The package currently includes:
 
-The package also includes **Catalyst TipTap Emoji**, a searchable emoji toolbar
-extension for Umbraco's TipTap Rich Text Editor.
+- [Star Rating](docs/star-rating.md), a configurable rating editor with optional half stars and Schema.org output helpers.
+- [CDN Image](docs/cdn-image.md), an image URL and alt text editor for CDN-hosted images.
+- [TipTap Emoji](docs/tiptap-emoji.md), a searchable emoji toolbar extension for Umbraco's TipTap Rich Text Editor.
 
-## Solution structure
+## Features
 
-```
-Umbraco.Catalyst.slnx
-src/
-  Umbraco.Catalyst/            Razor Class Library (net10.0)
-    Core/                      Shared abstractions (ICatalystValue, CatalystValueBase, ICatalystConfiguration)
-    DataTypes/                 StarRating and CdnImage data types
-    Models/                    SaveMode, CatalystSetRequest, CatalystSetResponse
-    Services/                  ICatalystContentService + ICatalystDataTypeService<T> (typed CRUD per data type)
-    Facade/                    Catalyst.cs - static fluent shorthand over the service layer
-    Api/                       CatalystApiController (full CRUD endpoints)
-    Composers/                 CatalystComposer (DI registration + static facade bootstrap)
-    wwwroot/UmbracoCatalyst/   umbraco-package.json + built backoffice bundle (catalyst.js)
-    client/                    TypeScript/Lit source for the retained editors and TipTap Emoji
-tests/
-  Umbraco.Catalyst.Tests/      xUnit tests for value models and converters
-```
+- Native Umbraco data types discovered automatically after installation.
+- Backoffice extensions served through Razor Class Library static web assets.
+- Typed C# value models and value converters.
+- Optional REST API for reading and writing Catalyst values.
+- No `appsettings.json`, `Program.cs`, or manual `App_Plugins` copy required.
 
-## Zero-config packaging
+## Installation
 
-The project is a **Razor Class Library** with `StaticWebAssetBasePath=App_Plugins`, so
-`wwwroot/UmbracoCatalyst/*` (the `umbraco-package.json` manifest + compiled client assets)
-is automatically served at `/App_Plugins/UmbracoCatalyst/...` by the consuming site's own
-static file pipeline — no manual file copying, no config changes.
-
-All `[DataEditor]` and `IPropertyValueConverter` classes are auto-discovered by Umbraco.
-`CatalystComposer` registers the service layer (`ICatalystContentService`, scoped) and
-a hosted service that initialises the static `Catalyst` facade on startup.
-
-## Building
+Install from NuGet:
 
 ```powershell
-dotnet build
-dotnet test
+dotnet add package Umbraco.Catalyst
 ```
 
-Packing (`dotnet pack`) automatically runs `npm install` + `npm run build` inside
-`src/Umbraco.Catalyst/client` first, so the backoffice bundle is always up to date in
-the resulting `.nupkg`.
+Or from Package Manager Console:
 
-## Reading values in Razor
+```powershell
+Install-Package Umbraco.Catalyst
+```
+
+After installation, open **Settings > Data Types > Create New**. Catalyst editors appear as `Catalyst.StarRating` and `Catalyst.CdnImage`. Configure a Rich Text Editor data type to add the TipTap Emoji action.
+
+## Usage and configuration
+
+### Property editors
+
+| Editor | Alias | Documentation |
+| --- | --- | --- |
+| Star Rating | `Catalyst.StarRating` | [Configuration and code examples](docs/star-rating.md) |
+| CDN Image | `Catalyst.CdnImage` | [Configuration and code examples](docs/cdn-image.md) |
+| TipTap Emoji | `Catalyst.Tiptap.Emoji` | [Configuration and code examples](docs/tiptap-emoji.md) |
+
+### Backend API
+
+Catalyst exposes authenticated endpoints under `/umbraco/catalyst/api/v1`. See [API documentation](docs/api.md) for request, response, and datatype examples.
+
+### C# value access
 
 ```csharp
 @using Umbraco.Catalyst.Core.Extensions
 @using Umbraco.Catalyst.DataTypes.StarRating
 
-var rating = Model.CatalystValue<StarRatingValue>("myRatingProperty");
+var rating = Model.CatalystValue<StarRatingValue>("productRating");
 if (rating?.HasValue == true)
 {
     <p>@rating.Rating / @rating.MaxStars</p>
 }
 ```
 
-## Reading and writing values in C#
+## Documentation
 
-Three equivalent ways to read/write Catalyst values programmatically:
+- [Documentation overview](docs/README.md)
+- [Star Rating](docs/star-rating.md)
+- [CDN Image](docs/cdn-image.md)
+- [TipTap Emoji](docs/tiptap-emoji.md)
+- [Catalyst API](docs/api.md)
 
-**1. Injected service** (`ICatalystContentService`, scoped per request):
+## Screenshots
 
-```csharp
-var rating = await _catalyst.StarRating.GetAsync(pageId, "productRating");
-await _catalyst.StarRating.SetAsync(pageId, "productRating",
-    new StarRatingValue { Rating = 4.5m, MaxStars = 5 }, SaveMode.SaveAndPublish);
+### Property editors
+
+![Catalyst property editors](docs/screenshots/Editor%20Types.png)
+
+![Star Rating](docs/screenshots/Rating.png)
+
+![CDN Image](docs/screenshots/CDN.png)
+
+### TipTap Emoji
+
+![Open Rich Text Editor data type](docs/screenshots/emoji-select.png)
+
+![Add Emoji action to toolbar](docs/screenshots/emoji-select-2.png)
+
+![Emoji available in editor toolbar](docs/screenshots/emoji-select-3.png)
+
+## Building and testing
+
+```powershell
+dotnet build
+dotnet test
 ```
 
-**2. Static fluent facade** (`using Umbraco.Catalyst;`):
+Packing runs the client build before creating the NuGet package:
 
-```csharp
-await Catalyst.StarRating.Set(pageId, "productRating", rating: 5m, maxStars: 5);
+```powershell
+dotnet pack src/Umbraco.Catalyst/Umbraco.Catalyst.csproj --configuration Release
 ```
 
-**3. REST API** (`/umbraco/catalyst/api/v1`):
+## Repository and support
 
-```http
-GET    /umbraco/catalyst/api/v1/content/{contentId}/property/{propertyAlias}
-GET    /umbraco/catalyst/api/v1/content/{contentId}/properties
-POST   /umbraco/catalyst/api/v1/content/{contentId}/property/{propertyAlias}
-DELETE /umbraco/catalyst/api/v1/content/{contentId}/property/{propertyAlias}
-GET    /umbraco/catalyst/api/v1/health
-```
+- [Source repository](https://github.com/vishnushanmughan/umbraco.catalyst)
+- [Issues](https://github.com/vishnushanmughan/umbraco.catalyst/issues)
+- [Umbraco Marketplace](https://marketplace.umbraco.com/)
 
-`SaveMode` controls what happens after a write: `Draft` (default, no publish),
-`SaveAndPublish` (saves and publishes immediately), or `SaveOnly` (persists the draft
-revision only).
+## License
+
+Umbraco Catalyst is released under the [MIT License](https://github.com/vishnushanmughan/umbraco.catalyst/blob/main/LICENSE).

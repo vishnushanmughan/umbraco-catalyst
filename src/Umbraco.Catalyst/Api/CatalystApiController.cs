@@ -49,7 +49,7 @@ public sealed class CatalystApiController : ControllerBase
     {
         status = "ok",
         package = "Umbraco.Catalyst",
-        version = "1.0.0",
+        version = typeof(CatalystApiController).Assembly.GetName().Version?.ToString() ?? "unknown",
         dataTypes = new[]
         {
             "Catalyst.StarRating", "Catalyst.CdnImage"

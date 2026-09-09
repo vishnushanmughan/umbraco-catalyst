@@ -1,7 +1,7 @@
 {
   "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
   "Title": "Umbraco Catalyst",
-  "Description": "Adds configurable Star Rating and CDN Image property editors, plus a searchable emoji toolbar extension for the Umbraco TipTap Rich Text Editor.",
+  "Description": "Umbraco Catalyst is a backend-extending package for Umbraco CMS with useful, out-of-the-box property editors and backoffice extensions. It currently includes Star Rating, CDN Image, and TipTap Emoji, with more features planned over time.",
   "AuthorDetails": {
     "Name": "Phases.io",
     "Description": "Phases - We create digital efficiency - Web, Podio, Integrations",
@@ -16,13 +16,39 @@
     ]
   },
   "Category": "Editor Tools",
-  "DocumentationUrl": "https://github.com/vishnushanmughan/umbraco.catalyst/blob/main/README.md",
+  "DocumentationUrl": "https://github.com/vishnushanmughan/umbraco.catalyst/tree/main/docs",
   "LicenseTypes": [ "Free" ],
   "IssueTrackerUrl": "https://github.com/vishnushanmughan/umbraco.catalyst/issues",
   "PackageType": "Package",
   "LookingForContributors": true,
   "LookingForMaintainer": false,
-  "VersionDependencyMode": "Default",
+  "VersionDependencyMode": "SemVer",
+  "Screenshots": [
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco.catalyst/refs/heads/main/docs/screenshots/Editor%20Types.png",
+      "Caption": "Catalyst property editors in Umbraco"
+    },
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco.catalyst/refs/heads/main/docs/screenshots/Rating.png",
+      "Caption": "Star Rating property editor"
+    },
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco.catalyst/refs/heads/main/docs/screenshots/CDN.png",
+      "Caption": "CDN Image property editor"
+    },
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco.catalyst/refs/heads/main/docs/screenshots/emoji-select.png",
+      "Caption": "TipTap Emoji picker"
+    },
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco.catalyst/refs/heads/main/docs/screenshots/emoji-select-2.png",
+      "Caption": "Add Emoji action to the TipTap toolbar"
+    },
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco.catalyst/refs/heads/main/docs/screenshots/emoji-select-3.png",
+      "Caption": "Emoji action in the editor toolbar"
+    }
+  ],
   "Tags": [
     "umbraco",
     "backoffice",
