@@ -16,15 +16,15 @@
 
     <!-- NuGet Package Metadata -->
     <PackageId>Umbraco.Catalyst</PackageId>
-    <Version>1.0.16</Version>
+    <Version>1.0.17</Version>
     <Title>Umbraco Catalyst</Title>
     <Authors>Vishnu Shanmughan, Phases.io</Authors>
     <Company>Phases.io</Company>
     <Product>Umbraco Catalyst</Product>
     <Description>Umbraco Catalyst is a backend-extending package for Umbraco CMS with useful, out-of-the-box property editors and backoffice extensions, including Star Rating, CDN Image, and TipTap Emoji.</Description>
     <PackageTags>umbraco;umbraco-cms;umbraco-backoffice;umbraco-17;umbraco-plugin;umbraco-marketplace;property-editor;data-type;star-rating;rating;cdn-image;image;alt-text;tiptap;rich-text-editor;emoji;emoji-picker;backoffice-extension</PackageTags>
-    <PackageProjectUrl>https://github.com/vishnushanmughan/umbraco.catalyst</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/vishnushanmughan/umbraco.catalyst</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/vishnushanmughan/umbraco-catalyst</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/vishnushanmughan/umbraco-catalyst</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>

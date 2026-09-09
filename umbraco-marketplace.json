@@ -16,36 +16,36 @@
     ]
   },
   "Category": "Editor Tools",
-  "DocumentationUrl": "https://github.com/vishnushanmughan/umbraco.catalyst/tree/main/docs",
+  "DocumentationUrl": "https://github.com/vishnushanmughan/umbraco-catalyst/tree/main/docs",
   "LicenseTypes": [ "Free" ],
-  "IssueTrackerUrl": "https://github.com/vishnushanmughan/umbraco.catalyst/issues",
+  "IssueTrackerUrl": "https://github.com/vishnushanmughan/umbraco-catalyst/issues",
   "PackageType": "Package",
   "LookingForContributors": true,
   "LookingForMaintainer": false,
   "VersionDependencyMode": "SemVer",
   "Screenshots": [
     {
-      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco.catalyst/refs/heads/main/docs/screenshots/Editor%20Types.png",
+      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco-catalyst/refs/heads/main/docs/screenshots/Editor%20Types.png",
       "Caption": "Catalyst property editors in Umbraco"
     },
     {
-      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco.catalyst/refs/heads/main/docs/screenshots/Rating.png",
+      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco-catalyst/refs/heads/main/docs/screenshots/Rating.png",
       "Caption": "Star Rating property editor"
     },
     {
-      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco.catalyst/refs/heads/main/docs/screenshots/CDN.png",
+      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco-catalyst/refs/heads/main/docs/screenshots/CDN.png",
       "Caption": "CDN Image property editor"
     },
     {
-      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco.catalyst/refs/heads/main/docs/screenshots/emoji-select.png",
+      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco-catalyst/refs/heads/main/docs/screenshots/emoji-select.png",
       "Caption": "TipTap Emoji picker"
     },
     {
-      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco.catalyst/refs/heads/main/docs/screenshots/emoji-select-2.png",
+      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco-catalyst/refs/heads/main/docs/screenshots/emoji-select-2.png",
       "Caption": "Add Emoji action to the TipTap toolbar"
     },
     {
-      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco.catalyst/refs/heads/main/docs/screenshots/emoji-select-3.png",
+      "ImageUrl": "https://raw.githubusercontent.com/vishnushanmughan/umbraco-catalyst/refs/heads/main/docs/screenshots/emoji-select-3.png",
       "Caption": "Emoji action in the editor toolbar"
     }
   ],

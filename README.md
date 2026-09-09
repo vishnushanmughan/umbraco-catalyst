@@ -87,27 +87,14 @@ if (rating?.HasValue == true)
 
 ![Add Emoji action to toolbar](docs/screenshots/emoji-select-2.png)
 
-![Emoji available in editor toolbar](docs/screenshots/emoji-select-3.png)
-
-## Building and testing
-
-```powershell
-dotnet build
-dotnet test
-```
-
-Packing runs the client build before creating the NuGet package:
-
-```powershell
-dotnet pack src/Umbraco.Catalyst/Umbraco.Catalyst.csproj --configuration Release
-```
+![Emoji available in editor toolbar](docs/screenshots/emoji-select-3.png) 
 
 ## Repository and support
 
-- [Source repository](https://github.com/vishnushanmughan/umbraco.catalyst)
-- [Issues](https://github.com/vishnushanmughan/umbraco.catalyst/issues)
+- [Source repository](https://github.com/vishnushanmughan/umbraco-catalyst)
+- [Issues](https://github.com/vishnushanmughan/umbraco-catalyst/issues)
 - [Umbraco Marketplace](https://marketplace.umbraco.com/)
 
 ## License
 
-Umbraco Catalyst is released under the [MIT License](https://github.com/vishnushanmughan/umbraco.catalyst/blob/main/LICENSE).
+Umbraco Catalyst is released under the [MIT License](https://github.com/vishnushanmughan/umbraco-catalyst/blob/main/LICENSE).

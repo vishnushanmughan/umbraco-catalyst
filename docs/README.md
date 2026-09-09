@@ -15,5 +15,5 @@ The package declares a direct dependency on `Umbraco.Cms.Core` version `[17.0.0,
 
 ## Source and support
 
-- [GitHub repository](https://github.com/vishnushanmughan/umbraco.catalyst)
-- [Issue tracker](https://github.com/vishnushanmughan/umbraco.catalyst/issues)
+- [GitHub repository](https://github.com/vishnushanmughan/umbraco-catalyst)
+- [Issue tracker](https://github.com/vishnushanmughan/umbraco-catalyst/issues)
