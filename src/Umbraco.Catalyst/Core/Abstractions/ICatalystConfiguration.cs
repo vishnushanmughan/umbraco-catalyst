@@ -1,4 +1,4 @@
-namespace Umbraco.Catalyst.Core.Abstractions;
+namespace Phases.Umbraco.Community.Catalyst.Core.Abstractions;
 
 /// <summary>
 /// Marker interface for all Catalyst data type configuration (prevalues) classes.

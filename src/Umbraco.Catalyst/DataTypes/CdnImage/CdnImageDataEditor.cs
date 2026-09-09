@@ -1,6 +1,6 @@
 using Umbraco.Cms.Core.PropertyEditors;
 
-namespace Umbraco.Catalyst.DataTypes.CdnImage;
+namespace Phases.Umbraco.Community.Catalyst.DataTypes.CdnImage;
 
 [DataEditor(CdnImageDataEditor.EditorAlias, ValueType = ValueTypes.Json)]
 public sealed class CdnImageDataEditor : DataEditor

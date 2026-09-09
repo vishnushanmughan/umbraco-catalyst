@@ -15,7 +15,7 @@ Example response:
 ```json
 {
   "status": "ok",
-  "package": "Umbraco.Catalyst",
+  "package": "Phases.Umbraco.Community.Catalyst",
   "version": "1.0.13",
   "dataTypes": [
     "Catalyst.StarRating",

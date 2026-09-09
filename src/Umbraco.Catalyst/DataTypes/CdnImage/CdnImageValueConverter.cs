@@ -1,8 +1,10 @@
 using System.Text.Json;
+using global::Phases.Umbraco.Community.Catalyst;
+using CatalystJsonOptions = global::Phases.Umbraco.Community.Catalyst.Core.Abstractions.CatalystJsonOptions;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.PropertyEditors;
 
-namespace Umbraco.Catalyst.DataTypes.CdnImage;
+namespace Phases.Umbraco.Community.Catalyst.DataTypes.CdnImage;
 
 public sealed class CdnImageValueConverter : PropertyValueConverterBase
 {
@@ -29,7 +31,7 @@ public sealed class CdnImageValueConverter : PropertyValueConverterBase
         try
         {
             var stored = JsonSerializer.Deserialize<CdnImageStoredData>(json,
-                JsonOptions.CamelCase);
+                CatalystJsonOptions.CamelCase);
 
             if (stored is null || string.IsNullOrWhiteSpace(stored.Url))
                 return CdnImageValue.Empty;

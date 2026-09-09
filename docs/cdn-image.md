@@ -28,8 +28,8 @@ A value retrieved through a converter is `CdnImageValue`:
 ## Razor usage
 
 ```csharp
-@using Umbraco.Catalyst.Core.Extensions
-@using Umbraco.Catalyst.DataTypes.CdnImage
+@using Phases.Umbraco.Community.Catalyst.Core.Extensions
+@using Phases.Umbraco.Community.Catalyst.DataTypes.CdnImage
 
 @{
     var image = Model.CatalystValue<CdnImageValue>("heroImage");

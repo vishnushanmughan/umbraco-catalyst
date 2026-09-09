@@ -1,7 +1,7 @@
-using Umbraco.Catalyst.DataTypes.StarRating;
+using Phases.Umbraco.Community.Catalyst.DataTypes.StarRating;
 using Xunit;
 
-namespace Umbraco.Catalyst.Tests.StarRating;
+namespace Phases.Umbraco.Community.Catalyst.Tests.StarRating;
 
 public class StarRatingValueTests
 {

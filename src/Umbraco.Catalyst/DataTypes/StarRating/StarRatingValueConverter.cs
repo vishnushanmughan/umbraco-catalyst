@@ -1,8 +1,10 @@
 using System.Text.Json;
+using global::Phases.Umbraco.Community.Catalyst;
+using CatalystJsonOptions = global::Phases.Umbraco.Community.Catalyst.Core.Abstractions.CatalystJsonOptions;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.PropertyEditors;
 
-namespace Umbraco.Catalyst.DataTypes.StarRating;
+namespace Phases.Umbraco.Community.Catalyst.DataTypes.StarRating;
 
 /// <summary>
 /// Converts the raw JSON stored by the Star Rating editor into a
@@ -38,14 +40,14 @@ public sealed class StarRatingValueConverter : PropertyValueConverterBase
         try
         {
             var stored = JsonSerializer.Deserialize<StarRatingStoredData>(json,
-                JsonOptions.CamelCase);
+                CatalystJsonOptions.CamelCase);
 
             if (stored is null)
                 return StarRatingValue.Empty;
 
             var configuration = JsonSerializer.Deserialize<StarRatingConfiguration>(
                 JsonSerializer.Serialize(propertyType.DataType.ConfigurationObject),
-                JsonOptions.CamelCase) ?? new StarRatingConfiguration();
+                CatalystJsonOptions.CamelCase) ?? new StarRatingConfiguration();
 
             return new StarRatingValue
             {

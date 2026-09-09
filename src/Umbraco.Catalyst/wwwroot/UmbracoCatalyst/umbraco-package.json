@@ -1,17 +1,17 @@
 {
   "$schema": "../../umbraco-package-schema.json",
-  "name": "Umbraco.Catalyst",
+  "name": "Phases.Umbraco.Community.Catalyst",
   "version": "1.0.13",
   "dataTypes": [
     {
-      "name": "Umbraco.Catalyst.StarRating",
-      "alias": "Umbraco.Catalyst.StarRating",
+      "name": "Phases.Umbraco.Community.Catalyst.StarRating",
+      "alias": "Phases.Umbraco.Community.Catalyst.StarRating",
       "propertyEditorAlias": "Catalyst.StarRating",
       "configuration": {}
     },
     {
-      "name": "Umbraco.Catalyst.CdnImage",
-      "alias": "Umbraco.Catalyst.CdnImage",
+      "name": "Phases.Umbraco.Community.Catalyst.CdnImage",
+      "alias": "Phases.Umbraco.Community.Catalyst.CdnImage",
       "propertyEditorAlias": "Catalyst.CdnImage",
       "configuration": {}
     }

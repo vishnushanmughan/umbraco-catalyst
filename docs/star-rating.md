@@ -29,8 +29,8 @@ A value retrieved through a converter is `StarRatingValue`:
 ## Razor usage
 
 ```csharp
-@using Umbraco.Catalyst.Core.Extensions
-@using Umbraco.Catalyst.DataTypes.StarRating
+@using Phases.Umbraco.Community.Catalyst.Core.Extensions
+@using Phases.Umbraco.Community.Catalyst.DataTypes.StarRating
 
 @{
     var rating = Model.CatalystValue<StarRatingValue>("productRating");
@@ -47,8 +47,8 @@ A value retrieved through a converter is `StarRatingValue`:
 `StarRatingValue` provides `ToMinimalSchema(string itemName)` and `ToFullSchema(string itemName, StarRatingSchemaOptions? options = null)`. These return an HTML `script` element containing JSON-LD, or an empty string when no rating exists.
 
 ```csharp
-@using Umbraco.Catalyst.Core.Extensions
-@using Umbraco.Catalyst.DataTypes.StarRating
+@using Phases.Umbraco.Community.Catalyst.Core.Extensions
+@using Phases.Umbraco.Community.Catalyst.DataTypes.StarRating
 
 @{
     var rating = Model.CatalystValue<StarRatingValue>("productRating");

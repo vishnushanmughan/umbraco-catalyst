@@ -1,7 +1,9 @@
 using System.Text.Json;
-using Umbraco.Catalyst.Core.Abstractions;
-using Umbraco.Catalyst.DataTypes.StarRating;
-using Umbraco.Catalyst.Models;
+using global::Phases.Umbraco.Community.Catalyst;
+using global::Phases.Umbraco.Community.Catalyst.Core.Abstractions;
+using global::Phases.Umbraco.Community.Catalyst.DataTypes.StarRating;
+using global::Phases.Umbraco.Community.Catalyst.Models;
+using CatalystJsonOptions = global::Phases.Umbraco.Community.Catalyst.Core.Abstractions.CatalystJsonOptions;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.PublishedCache;
@@ -9,7 +11,7 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Extensions;
 
-namespace Umbraco.Catalyst.Services;
+namespace Phases.Umbraco.Community.Catalyst.Services;
 
 /// <summary>
 /// Generic implementation of ICatalystDataTypeService.
@@ -83,7 +85,7 @@ internal sealed class CatalystDataTypeService<TValue> : ICatalystDataTypeService
         if (content is null) return Task.FromResult(false);
 
         value = GetValueForSave(content, propertyAlias, value);
-        var json = JsonSerializer.Serialize(value, JsonOptions.CamelCase);
+        var json = JsonSerializer.Serialize(value, CatalystJsonOptions.CamelCase);
         content.SetValue(propertyAlias, json);
 
         return Task.FromResult(ApplySaveMode(content, saveMode));
@@ -153,7 +155,7 @@ internal sealed class CatalystDataTypeService<TValue> : ICatalystDataTypeService
             ?? throw new InvalidOperationException("Star Rating data type configuration was not found.");
 
         var configuration = JsonSerializer.Deserialize<StarRatingConfiguration>(
-            JsonSerializer.Serialize(dataType.ConfigurationData), JsonOptions.CamelCase)
+            JsonSerializer.Serialize(dataType.ConfigurationData), CatalystJsonOptions.CamelCase)
             ?? new StarRatingConfiguration();
         var maxStars = configuration.MaxStars > 0 ? configuration.MaxStars : 5;
         var rating = ((StarRatingValue)(object)value).Rating;

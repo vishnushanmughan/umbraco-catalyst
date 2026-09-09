@@ -1,7 +1,7 @@
-using Umbraco.Catalyst.Core.Abstractions;
-using Umbraco.Catalyst.Models;
+using Phases.Umbraco.Community.Catalyst.Core.Abstractions;
+using Phases.Umbraco.Community.Catalyst.Models;
 
-namespace Umbraco.Catalyst.Services;
+namespace Phases.Umbraco.Community.Catalyst.Services;
 
 /// <summary>
 /// Generic service interface for reading and writing a single Catalyst data type

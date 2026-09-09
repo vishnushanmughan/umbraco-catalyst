@@ -1,6 +1,6 @@
 using System.Text.Json.Nodes;
 
-namespace Umbraco.Catalyst.Models;
+namespace Phases.Umbraco.Community.Catalyst.Models;
 
 /// <summary>
 /// Request body model for REST write endpoints.
@@ -32,4 +32,27 @@ public sealed class CatalystSetRequest
     /// Defaults to Draft - does not auto-publish.
     /// </summary>
     public SaveMode SaveMode { get; init; } = SaveMode.Draft;
+}
+
+/// <summary>
+/// Controls what happens to Umbraco content after a Catalyst value is written.
+/// </summary>
+public enum SaveMode
+{
+    Draft,
+    SaveAndPublish,
+    SaveOnly
+}
+
+/// <summary>
+/// Response returned by REST write endpoints after setting a Catalyst value.
+/// </summary>
+public sealed class CatalystSetResponse
+{
+    public Guid ContentId { get; init; }
+    public string PropertyAlias { get; init; } = string.Empty;
+    public bool Saved { get; init; }
+    public string SaveMode { get; init; } = string.Empty;
+    public object? SavedValue { get; init; }
+    public string Message { get; init; } = string.Empty;
 }

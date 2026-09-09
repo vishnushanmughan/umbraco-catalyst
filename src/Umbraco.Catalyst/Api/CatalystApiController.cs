@@ -2,16 +2,18 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Umbraco.Catalyst.Core.Abstractions;
-using Umbraco.Catalyst.DataTypes.StarRating;
-using Umbraco.Catalyst.Models;
+using global::Phases.Umbraco.Community.Catalyst;
+using global::Phases.Umbraco.Community.Catalyst.Core.Abstractions;
+using global::Phases.Umbraco.Community.Catalyst.DataTypes.StarRating;
+using global::Phases.Umbraco.Community.Catalyst.Models;
+using CatalystJsonOptions = global::Phases.Umbraco.Community.Catalyst.Core.Abstractions.CatalystJsonOptions;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Extensions;
 
-namespace Umbraco.Catalyst.Api;
+namespace Phases.Umbraco.Community.Catalyst.Api;
 
 /// <summary>
 /// API controller providing full CRUD access to Catalyst property values.
@@ -48,7 +50,7 @@ public sealed class CatalystApiController : ControllerBase
     public IActionResult Health() => Ok(new
     {
         status = "ok",
-        package = "Umbraco.Catalyst",
+        package = "Phases.Umbraco.Community.Catalyst",
         version = typeof(CatalystApiController).Assembly.GetName().Version?.ToString() ?? "unknown",
         dataTypes = new[]
         {
@@ -155,10 +157,10 @@ public sealed class CatalystApiController : ControllerBase
             if (validation.Error is not null)
                 return BadRequest(new { error = validation.Error });
 
-            value = JsonSerializer.SerializeToNode(validation.Value, JsonOptions.CamelCase)!;
+            value = JsonSerializer.SerializeToNode(validation.Value, CatalystJsonOptions.CamelCase)!;
         }
 
-        var json = value.ToJsonString(JsonOptions.CamelCase);
+        var json = value.ToJsonString(CatalystJsonOptions.CamelCase);
         content.SetValue(propertyAlias, json);
 
         var saved = ApplySaveMode(content, request.SaveMode);
@@ -166,7 +168,7 @@ public sealed class CatalystApiController : ControllerBase
         var savedContent = _publishedCache.GetById(contentId);
         var savedValue = savedContent?.Value(propertyAlias);
 
-        return Ok(new CatalystSetResponse
+        return Ok(new global::Phases.Umbraco.Community.Catalyst.Models.CatalystSetResponse
         {
             ContentId = contentId,
             PropertyAlias = propertyAlias,
@@ -184,7 +186,7 @@ public sealed class CatalystApiController : ControllerBase
         StarRatingRequestValue? requested;
         try
         {
-            requested = requestValue.Deserialize<StarRatingRequestValue>(JsonOptions.CamelCase);
+            requested = requestValue.Deserialize<StarRatingRequestValue>(CatalystJsonOptions.CamelCase);
         }
         catch (JsonException)
         {
@@ -203,7 +205,7 @@ public sealed class CatalystApiController : ControllerBase
         {
             configuration = JsonSerializer.Deserialize<StarRatingConfiguration>(
                 JsonSerializer.Serialize(dataType.ConfigurationData),
-                JsonOptions.CamelCase) ?? new StarRatingConfiguration();
+                CatalystJsonOptions.CamelCase) ?? new StarRatingConfiguration();
         }
         catch (JsonException)
         {

@@ -1,8 +1,8 @@
-using Umbraco.Catalyst.Core.Abstractions;
+using Phases.Umbraco.Community.Catalyst.Core.Abstractions;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
 
-namespace Umbraco.Catalyst.Core.Extensions;
+namespace Phases.Umbraco.Community.Catalyst.Core.Extensions;
 
 /// <summary>
 /// Extension methods on IPublishedElement and IPublishedContent

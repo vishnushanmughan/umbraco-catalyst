@@ -1,7 +1,7 @@
-using Umbraco.Catalyst.DataTypes.CdnImage;
-using Umbraco.Catalyst.DataTypes.StarRating;
+using Phases.Umbraco.Community.Catalyst.DataTypes.CdnImage;
+using Phases.Umbraco.Community.Catalyst.DataTypes.StarRating;
 
-namespace Umbraco.Catalyst.Services;
+namespace Phases.Umbraco.Community.Catalyst.Services;
 
 /// <summary>
 /// Root Catalyst service. Inject this single interface to access the Catalyst data types.

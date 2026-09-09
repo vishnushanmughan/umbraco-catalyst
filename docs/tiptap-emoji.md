@@ -10,7 +10,7 @@
 
 ## Installation and configuration
 
-1. Install the `Umbraco.Catalyst` NuGet package.
+1. Install the `Phases.Umbraco.Community.Catalyst` NuGet package.
 2. Open **Settings > Data Types**.
 3. Open a Rich Text Editor data type.
 4. Add the Catalyst Emoji action to the TipTap toolbar.

@@ -1,8 +1,8 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Umbraco.Catalyst.Core.Abstractions;
+using Phases.Umbraco.Community.Catalyst.Core.Abstractions;
 
-namespace Umbraco.Catalyst.DataTypes.StarRating;
+namespace Phases.Umbraco.Community.Catalyst.DataTypes.StarRating;
 
 /// <summary>
 /// Strongly typed model returned when reading a Catalyst Star Rating property.
