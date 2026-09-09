@@ -1,10 +1,10 @@
-using Phases.Umbraco.Community.Catalyst.DataTypes.CdnImage;
-using Phases.Umbraco.Community.Catalyst.DataTypes.StarRating;
+using Umbraco.Community.Catalyst.DataTypes.CdnImage;
+using Umbraco.Community.Catalyst.DataTypes.StarRating;
 using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
 
-namespace Phases.Umbraco.Community.Catalyst.Services;
+namespace Umbraco.Community.Catalyst.Services;
 
 /// <summary>
 /// Concrete implementation of ICatalystContentService.

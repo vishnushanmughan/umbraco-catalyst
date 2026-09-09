@@ -1,4 +1,4 @@
-namespace Phases.Umbraco.Community.Catalyst.DataTypes.StarRating;
+namespace Umbraco.Community.Catalyst.DataTypes.StarRating;
 
 /// <summary>Optional values included by <see cref="StarRatingValue.ToFullSchema"/>.</summary>
 public sealed class StarRatingSchemaOptions

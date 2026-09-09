@@ -1,10 +1,10 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Phases.Umbraco.Community.Catalyst.Services;
+using Umbraco.Community.Catalyst.Services;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace Phases.Umbraco.Community.Catalyst.Composers;
+namespace Umbraco.Community.Catalyst.Composers;
 
 /// <summary>
 /// Registers all Catalyst services with Umbraco's DI container.

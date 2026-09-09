@@ -1,6 +1,6 @@
 using System.Text.Json.Nodes;
 
-namespace Phases.Umbraco.Community.Catalyst.Models;
+namespace Umbraco.Community.Catalyst.Models;
 
 /// <summary>
 /// Request body model for REST write endpoints.

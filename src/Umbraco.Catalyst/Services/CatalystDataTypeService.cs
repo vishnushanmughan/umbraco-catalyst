@@ -1,9 +1,9 @@
 using System.Text.Json;
-using global::Phases.Umbraco.Community.Catalyst;
-using global::Phases.Umbraco.Community.Catalyst.Core.Abstractions;
-using global::Phases.Umbraco.Community.Catalyst.DataTypes.StarRating;
-using global::Phases.Umbraco.Community.Catalyst.Models;
-using CatalystJsonOptions = global::Phases.Umbraco.Community.Catalyst.Core.Abstractions.CatalystJsonOptions;
+using global::Umbraco.Community.Catalyst;
+using global::Umbraco.Community.Catalyst.Core.Abstractions;
+using global::Umbraco.Community.Catalyst.DataTypes.StarRating;
+using global::Umbraco.Community.Catalyst.Models;
+using CatalystJsonOptions = global::Umbraco.Community.Catalyst.Core.Abstractions.CatalystJsonOptions;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.PublishedCache;
@@ -11,7 +11,7 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Extensions;
 
-namespace Phases.Umbraco.Community.Catalyst.Services;
+namespace Umbraco.Community.Catalyst.Services;
 
 /// <summary>
 /// Generic implementation of ICatalystDataTypeService.

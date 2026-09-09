@@ -1,10 +1,10 @@
 using System.Text.Json;
-using global::Phases.Umbraco.Community.Catalyst;
-using CatalystJsonOptions = global::Phases.Umbraco.Community.Catalyst.Core.Abstractions.CatalystJsonOptions;
+using global::Umbraco.Community.Catalyst;
+using CatalystJsonOptions = global::Umbraco.Community.Catalyst.Core.Abstractions.CatalystJsonOptions;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.PropertyEditors;
 
-namespace Phases.Umbraco.Community.Catalyst.DataTypes.StarRating;
+namespace Umbraco.Community.Catalyst.DataTypes.StarRating;
 
 /// <summary>
 /// Converts the raw JSON stored by the Star Rating editor into a

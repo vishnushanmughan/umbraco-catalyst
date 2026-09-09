@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace Phases.Umbraco.Community.Catalyst.Core.Abstractions;
+namespace Umbraco.Community.Catalyst.Core.Abstractions;
 
 /// <summary>
 /// Abstract base class for all Catalyst property value models.

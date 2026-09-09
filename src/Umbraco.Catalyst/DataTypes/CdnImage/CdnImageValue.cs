@@ -1,6 +1,6 @@
-using Phases.Umbraco.Community.Catalyst.Core.Abstractions;
+using Umbraco.Community.Catalyst.Core.Abstractions;
 
-namespace Phases.Umbraco.Community.Catalyst.DataTypes.CdnImage;
+namespace Umbraco.Community.Catalyst.DataTypes.CdnImage;
 
 /// <summary>
 /// Strongly typed model for a CDN-hosted image with URL and alt text.

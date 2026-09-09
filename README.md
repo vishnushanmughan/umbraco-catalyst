@@ -25,13 +25,13 @@ The package currently includes:
 Install from NuGet:
 
 ```powershell
-dotnet add package Phases.Umbraco.Community.Catalyst
+dotnet add package Umbraco.Community.Catalyst
 ```
 
 Or from Package Manager Console:
 
 ```powershell
-Install-Package Phases.Umbraco.Community.Catalyst
+Install-Package Umbraco.Community.Catalyst
 ```
 
 After installation, open **Settings > Data Types > Create New**. Catalyst editors appear as `Catalyst.StarRating` and `Catalyst.CdnImage`. Configure a Rich Text Editor data type to add the TipTap Emoji action.
@@ -53,8 +53,8 @@ Catalyst exposes authenticated endpoints under `/umbraco/catalyst/api/v1`. See [
 ### C# value access
 
 ```csharp
-@using Phases.Umbraco.Community.Catalyst.Core.Extensions
-@using Phases.Umbraco.Community.Catalyst.DataTypes.StarRating
+@using Umbraco.Community.Catalyst.Core.Extensions
+@using Umbraco.Community.Catalyst.DataTypes.StarRating
 
 var rating = Model.CatalystValue<StarRatingValue>("productRating");
 if (rating?.HasValue == true)

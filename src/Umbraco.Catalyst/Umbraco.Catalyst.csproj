@@ -5,8 +5,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>latest</LangVersion>
-    <RootNamespace>Phases.Umbraco.Community.Catalyst</RootNamespace>
-    <AssemblyName>Phases.Umbraco.Community.Catalyst</AssemblyName>
+    <RootNamespace>Umbraco.Community.Catalyst</RootNamespace>
+    <AssemblyName>Umbraco.Community.Catalyst</AssemblyName>
 
     <!-- Razor Class Library static web assets are served automatically by the
          consuming Umbraco site's own UseStaticFiles/MapStaticAssets pipeline.
@@ -15,7 +15,7 @@
     <AddRazorSupportForMvc>false</AddRazorSupportForMvc>
 
     <!-- NuGet Package Metadata -->
-    <PackageId>Phases.Umbraco.Community.Catalyst</PackageId>
+    <PackageId>Umbraco.Community.Catalyst</PackageId>
     <Version>1.0.19</Version>
     <Title>Umbraco Catalyst</Title>
     <Authors>Vishnu Shanmughan, Phases.io</Authors>

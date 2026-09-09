@@ -1,9 +1,9 @@
-using Phases.Umbraco.Community.Catalyst.DataTypes.CdnImage;
-using Phases.Umbraco.Community.Catalyst.DataTypes.StarRating;
-using Phases.Umbraco.Community.Catalyst.Models;
-using Phases.Umbraco.Community.Catalyst.Services;
+using Umbraco.Community.Catalyst.DataTypes.CdnImage;
+using Umbraco.Community.Catalyst.DataTypes.StarRating;
+using Umbraco.Community.Catalyst.Models;
+using Umbraco.Community.Catalyst.Services;
 
-namespace Phases.Umbraco.Community.Catalyst;
+namespace Umbraco.Community.Catalyst;
 
 /// <summary>Static shorthand facade for the Catalyst content services.</summary>
 public static class Catalyst

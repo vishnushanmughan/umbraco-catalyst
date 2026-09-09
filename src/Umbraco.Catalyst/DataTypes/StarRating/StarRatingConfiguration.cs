@@ -1,7 +1,7 @@
-using Phases.Umbraco.Community.Catalyst.Core.Abstractions;
+using Umbraco.Community.Catalyst.Core.Abstractions;
 using Umbraco.Cms.Core.PropertyEditors;
 
-namespace Phases.Umbraco.Community.Catalyst.DataTypes.StarRating;
+namespace Umbraco.Community.Catalyst.DataTypes.StarRating;
 
 /// <summary>
 /// Prevalues for the Catalyst Star Rating property editor.

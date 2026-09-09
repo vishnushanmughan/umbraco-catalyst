@@ -1,4 +1,4 @@
-namespace Phases.Umbraco.Community.Catalyst.Core.Abstractions;
+namespace Umbraco.Community.Catalyst.Core.Abstractions;
 
 /// <summary>
 /// Root interface implemented by every Catalyst property value model.

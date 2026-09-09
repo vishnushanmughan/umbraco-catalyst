@@ -1,7 +1,7 @@
-using Phases.Umbraco.Community.Catalyst.Core.Abstractions;
+using Umbraco.Community.Catalyst.Core.Abstractions;
 using Umbraco.Cms.Core.PropertyEditors;
 
-namespace Phases.Umbraco.Community.Catalyst.DataTypes.CdnImage;
+namespace Umbraco.Community.Catalyst.DataTypes.CdnImage;
 
 public sealed class CdnImageConfiguration : ICatalystConfiguration
 {

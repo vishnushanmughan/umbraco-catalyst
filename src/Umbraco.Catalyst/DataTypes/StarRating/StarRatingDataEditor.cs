@@ -1,6 +1,6 @@
 using Umbraco.Cms.Core.PropertyEditors;
 
-namespace Phases.Umbraco.Community.Catalyst.DataTypes.StarRating;
+namespace Umbraco.Community.Catalyst.DataTypes.StarRating;
 
 /// <summary>
 /// Registers the Catalyst Star Rating property editor schema with Umbraco.

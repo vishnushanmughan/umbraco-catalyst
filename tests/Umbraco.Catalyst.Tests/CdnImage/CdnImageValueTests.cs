@@ -1,7 +1,7 @@
-using Phases.Umbraco.Community.Catalyst.DataTypes.CdnImage;
+using Umbraco.Community.Catalyst.DataTypes.CdnImage;
 using Xunit;
 
-namespace Phases.Umbraco.Community.Catalyst.Tests.CdnImage;
+namespace Umbraco.Community.Catalyst.Tests.CdnImage;
 
 public class CdnImageValueTests
 {
