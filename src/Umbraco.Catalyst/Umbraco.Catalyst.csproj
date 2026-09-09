@@ -16,7 +16,7 @@
 
     <!-- NuGet Package Metadata -->
     <PackageId>Umbraco.Catalyst</PackageId>
-    <Version>1.0.11</Version>
+    <Version>1.0.13</Version>
     <Title>Umbraco Catalyst</Title>
     <Authors>Vishnu Shanmughan, Phases.io</Authors>
     <Company>Phases.io</Company>
@@ -29,10 +29,13 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<PackageOutputPath>D:\NuGet</PackageOutputPath>
     <IncludeBuildOutput>true</IncludeBuildOutput>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DebugType>embedded</DebugType>
     <IncludeSymbols>false</IncludeSymbols>
+    <Tags>umbraco-marketplace</Tags> 
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -50,6 +53,10 @@
     <Content Remove="client\**" />
   </ItemGroup>
 
+	<ItemGroup>
+		<None Include="icon.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+	
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="\" Condition="Exists('..\..\README.md')" />
   </ItemGroup>

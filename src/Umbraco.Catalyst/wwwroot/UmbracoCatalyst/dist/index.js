@@ -258,7 +258,6 @@ let l = class extends x {
         </uui-input>
 
         <div class="grid-actions">
-          ${e.url ? o`<uui-button class="grid-clear" label="Clear" @click=${this._onClear}>Clear</uui-button>` : ""}
           ${this._imageDimensions ? o`<small class="grid-pixels">${this._imageDimensions}</small>` : ""}
         </div>
 
@@ -352,14 +351,14 @@ l = u([
   T("catalyst-cdn-image-editor")
 ], l);
 const v = 127462, y = 127487;
-function C(e) {
+function P(e) {
   const t = Array.from(e);
   if (t.length !== 2) return !1;
   const a = t[0].codePointAt(0) ?? 0, i = t[1].codePointAt(0) ?? 0;
   return a >= v && a <= y && i >= v && i <= y;
 }
-function P(e) {
-  return C(e.native) ? !0 : e.id.length === 2 && /^[a-z]{2}$/i.test(e.id);
+function O(e) {
+  return P(e.native) ? !0 : e.id.length === 2 && /^[a-z]{2}$/i.test(e.id);
 }
 const w = {
   frequent: "Frequently Used",
@@ -383,7 +382,7 @@ const w = {
     { id: "symbols", name: "Symbols", emojis: ["heart", "orange_heart", "yellow_heart", "green_heart", "blue_heart", "purple_heart", "black_heart", "broken_heart", "star2", "sparkles", "zap", "checkmark", "cross", "question", "exclamation", "plus", "minus", "divide", "hash", "arrow_right", "arrow_left", "recycle", "tm", "copyright", "registered"] }
   ],
   emojis: {}
-}, O = {
+}, C = {
   grinning: "😀",
   smiley: "😃",
   smile: "😄",
@@ -564,7 +563,7 @@ const w = {
 };
 function D() {
   const e = {};
-  for (const [t, a] of Object.entries(O))
+  for (const [t, a] of Object.entries(C))
     e[t] = { id: t, name: t.replace(/_/g, " "), native: a, keywords: [t] };
   return e;
 }
@@ -592,7 +591,7 @@ function z(e) {
       native: f,
       keywords: p.keywords
     };
-    P(b) || (a[s] = b);
+    O(b) || (a[s] = b);
   }
   return { categories: t, emojis: a };
 }
@@ -640,7 +639,7 @@ export {
   M as U,
   B as a,
   c as b,
-  P as i,
+  O as i,
   I as l,
   J as m,
   L as p

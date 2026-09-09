@@ -1,4 +1,6 @@
 <Solution>
+  <Folder Name="/Docs/" />
+  <Folder Name="/Docs/Images/" />
   <Folder Name="/src/">
     <Project Path="src/Umbraco.Catalyst/Umbraco.Catalyst.csproj" />
   </Folder>

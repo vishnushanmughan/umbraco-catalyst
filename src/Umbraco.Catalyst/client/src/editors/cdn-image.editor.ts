@@ -187,9 +187,6 @@ export class CatalystCdnImageEditor extends UmbLitElement implements UmbProperty
         </uui-input>
 
         <div class="grid-actions">
-          ${imageValue.url
-            ? html`<uui-button class="grid-clear" label="Clear" @click=${this._onClear}>Clear</uui-button>`
-            : ""}
           ${this._imageDimensions ? html`<small class="grid-pixels">${this._imageDimensions}</small>` : ""}
         </div>
 
